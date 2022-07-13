@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "version": "0.0.1",
+  "short_name": "Wallet By React",
+  "name": "Create React App Sample",
+  "description": "Smart Contract Chrome Extension by CRA",
+  "browser_action": {
+    "default_title": "CRE",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.bundle.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.bundle.js"]
+    }
+  ],
+  "icons": {
+    "16": "img/icon-16.png",
+    "48": "img/icon-48.png",
+    "128": "img/icon-128.png"
+  },
+  "options_page": "options.html",
+  "permissions": [ 
+    "tabs",
+    "activeTab", 
+    "storage", 
+    "background", 
+    "https://*/",
+    "http://*/"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
